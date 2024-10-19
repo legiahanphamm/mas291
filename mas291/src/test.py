@@ -7,7 +7,7 @@ filepath = '../data/Sleep_health_and_lifestyle_dataset.csv'
 data = pd.read_csv(filepath)
 
 # Clear data
-data_df = data[['Age', 'Sleep Duration']]
+data_df = data[['Quality of Sleep', 'Stress Level']]
 
 # Part 02: Descriptive Statistics
 
@@ -48,3 +48,6 @@ def extract_measures(column_name, input_df):
         "Range": extracted_stat['Range']
     }
     return extracted_stat
+
+col1_ext = extract_measures('Stress Level', descriptive_stat_df)
+col2_ext = extract_measures('Quality of Sleep', descriptive_stat_df)
